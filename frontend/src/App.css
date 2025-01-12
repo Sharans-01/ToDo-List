@@ -1,0 +1,362 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'arial', sans-serif;
+}
+
+/* Body Styling */
+body {
+  background: linear-gradient(135deg, #4be8e5, #ac2ea7);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  backdrop-filter: blur(5px);
+}
+
+/* Container with Glassmorphism */
+.container {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(246, 246, 246, 0.285);
+  border-radius: 10px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgb(14, 246, 234); /* Regular border color */
+  margin-left: -10%;
+  transition: border-color 0.5s ease, box-shadow 0.5s ease; /* Smooth transition for border color and shadow */
+}
+
+/* Glowing effect on hover */
+.container:hover {
+  box-shadow: 0 0 10px 4px rgba(14, 246, 234, 0.8); /* Glowing border effect */
+}
+
+
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #1c03ff;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+input[type="text"], textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 3px solid #adc8d7;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.3s;
+  background: rgba(254, 253, 253, 0.921);
+}
+
+input[type="text"]:focus, textarea:focus {
+  border-color: #3f51b5;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+textarea {
+  resize: none;
+  height: 70px;
+}
+
+/* Button Styling */
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #2953d3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  backdrop-filter: blur(5px);
+}
+
+button:hover {
+  background-color: #283593;
+  transform: scale(1.05);
+}
+
+/* Task List */
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* Task Item */
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s, transform 0.2s;
+  width: 100%;
+  max-width: 800px;
+}
+
+.task-item.editing {
+  padding: 15px;
+}
+
+.task-item:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  background-color: white;
+  transition: background-color 0.3s;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #4CAF50;
+  border-color: #4CAF50;
+}
+
+input[type="checkbox"]:checked::after {
+  content: '\2713';
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 3px;
+  font-size: 13px;
+}
+
+input[type="checkbox"]:hover {
+  border-color: #4CAF50;
+}
+
+.task-item span {
+  flex-grow: 1;
+  font-size: 1rem;
+  color: #333;
+  font-weight: bold;
+  margin-left: -10px;
+}
+
+.task-item span.completed {
+  text-decoration: line-through;
+  color: #5f5f5b;
+}
+
+/* Button Styles */
+
+
+/* Button Styling */
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #2953d3; /* Original Blue */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  backdrop-filter: blur(5px); /* Slight blur on buttons */
+}
+
+button:hover {
+  background-color: #283593; /* Darker Blue on hover */
+  transform: scale(1.05);
+}
+
+/* Edit Button */
+button#edit {
+  background-color: #fbc02d; /* Original Yellow */
+  color: white;
+  font-size: 0.8rem;
+  padding: 5px 15px;
+  margin-right: 10px;
+}
+
+button#edit:hover {
+  background-color: #f9a825; /* Darker Yellow on hover */
+  transform: scale(1.05);
+}
+
+/* Delete Button */
+button#delete {
+  background-color: #e53935; /* Original Red */
+  color: white;
+  font-size: 0.8rem;
+  padding: 5px 15px;
+  margin-right: 10px;
+}
+
+button#delete:hover {
+  background-color: #c62828; /* Darker Red on hover */
+  transform: scale(1.05);
+}
+
+/* Save Button */
+button#save {
+  background-color: #4caf50; /* Original Green */
+  color: white;
+  font-size: 0.8rem;
+  padding: 5px 15px;
+  margin-top: 10px; /* Add space above */
+  margin-right: 10px;
+  top: 10px;
+}
+
+button#save:hover {
+  background-color: #388e3c; /* Darker Green on hover */
+  transform: scale(1.05);
+}
+
+
+/* Cancel Button */
+button#cancel {
+  background-color: #f44336; /* Original Red */
+  color: white;
+  font-size: 0.8rem;
+  padding: 5px 15px;
+  margin-right: 10px;
+}
+
+button#cancel:hover {
+  background-color: #d32f2f; /* Darker Red on hover */
+  transform: scale(1.05);
+}
+
+
+.task-item.editing input[type="checkbox"] {
+  display: none;
+}
+
+.task-item input[type="text"] {
+  width: calc(100% - 20px);
+  padding: 5px;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.task-item input[type="text"]:focus {
+  border-color: #3f51b5;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #000000;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #3f51b5;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Mobile */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  form {
+    gap: 15px;
+  }
+
+  input[type="text"], textarea {
+    font-size: 0.9rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .task-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .task-item span {
+    font-size: 0.9rem;
+    margin-left: 0;
+  }
+
+  button#edit,
+  button#delete,
+  button#save,
+  button#cancel {
+    font-size: 0.9rem;
+    width: 100%;
+    padding: 8px 10px;
+    margin-top: 10px;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 25px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+  }
+
+  .task-item {
+    padding: 15px;
+  }
+}
